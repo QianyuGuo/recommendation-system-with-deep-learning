@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+from scipy.sparse import csr_matrix
 def vectorize_dic(dic,ix=None,p=None,n=0,g=0):
     """
     dic -- dictionary of feature lists. Keys are the name of features
@@ -52,7 +53,7 @@ def vectorize_dic(dic,ix=None,p=None,n=0,g=0):
         p = len(ix)
 
     ixx = np.where(col_ix < p)
-    return csr.csr_matrix((data[ixx],(row_ix[ixx],col_ix[ixx])),shape=(n,p)),ix
+    return csr_matrix((data[ixx],(row_ix[ixx],col_ix[ixx])),shape=(n,p)),ix
 
 cols = ['user','item','rating','timestamp']
 
