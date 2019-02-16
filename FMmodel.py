@@ -1,3 +1,5 @@
+import numpy as np
+import pandas as pd
 def vectorize_dic(dic,ix=None,p=None,n=0,g=0):
     """
     dic -- dictionary of feature lists. Keys are the name of features
